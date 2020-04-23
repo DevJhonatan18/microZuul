@@ -39,8 +39,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		// TODO Auto-generated method stub
 		http.authorizeRequests().antMatchers("/api/seguridad/oauth/**").permitAll()
 		.antMatchers(HttpMethod.GET , "/api/account/listar" , "/api/account/ver/{id}" , "/api/historical/listar" ,
-				                      "/api/historical/transaction/{accountId}"    )
+				                      "/api/historical/transaction/{accountId}" , "/api/cronograma/listar", "/api/cronograma/ver/{id}"  
+				                    , "/api/cronograma/ver/{id}/{id2}" , "/api/historico/listar",
+				                      "/api/historico/transaction/{nroprestamo}/{cuota}" )
+		
 		.hasAnyRole("ADMIN", "USER").antMatchers("/api/deposit/**").hasAnyRole("ADMIN","USER")
+		.antMatchers("/api/payment/**").hasAnyRole("ADMIN","USER")
 		.antMatchers("/api/withdrawal/**").hasAnyRole("ADMIN")
 		.anyRequest().authenticated()
 		.and().cors().configurationSource(configurationSource());

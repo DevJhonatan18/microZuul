@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -X GET "localhost:8090/api/historico/listar" -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1ODc2MzU3OTEsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJqdGkiOiJkMzAxODI5Mi1hYWEwLTRkODEtYjEwOC01NjJiNzIxYjAzM2MiLCJjbGllbnRfaWQiOiJ3ZWJBbmd1bGFyIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.0tXpXOhvgdD6A5xNAPSCjDXoVBTSzKYNk86SohGGbp8' | python -m json.tool
